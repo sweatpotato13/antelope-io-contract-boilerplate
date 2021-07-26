@@ -1,0 +1,34 @@
+{
+    "configurations": [
+        {
+            "name": "Mac",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "/usr/local/include",
+                "/usr/local/opt/openssl/include",
+                "/usr/local/Cellar/blanc/0.8.0/opt/blanc/include",
+                "/usr/local/Cellar/blanc/0.8.0/opt/blanc/include/eosiolib",
+                "/usr/local/Cellar/blanc/0.8.0/opt/blanc/include/eosiolib/core",
+                "/usr/local/Cellar/blanc/0.8.0/opt/blanc/include/eosiolib/native",
+                "/usr/local/Cellar/blanc/0.8.0/opt/blanc/include/eosiolib/contracts",
+                "~/eosio/2.0/include",
+                "~/eosio/2.0/include/eosio",
+                "~/eosio/2.0/include/wasm-jit",
+                "~/eosio/2.0/include/eosio/vm",
+                "~/eosio/2.0/src/boost_1_71_0/include/"
+            ],
+            "defines": [],
+            "macFrameworkPath": [
+                "/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/System/Library/Frameworks",
+                "/Library/Developer/CommandLineTools/usr/bin"
+            ],
+            "compilerPath": "/usr/bin/clang++",
+            "cStandard": "c11",
+            "intelliSenseMode": "clang-x64",
+            "cppStandard": "c++17",
+            // "configurationProvider": "ms-vscode.cmake-tools"
+            "configurationProvider": "vector-of-bool.cmake-tools"
+        }
+    ],
+    "version": 4
+}
