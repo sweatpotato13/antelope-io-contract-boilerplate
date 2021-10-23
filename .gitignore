@@ -37,6 +37,10 @@ dist/*
 dist/
 .DS_Store
 
+## Node
+node_modules
+yarn-error.log
+
 ## Blockchain
 blockchain/nodeos-data-volume/nodeos-data/config/protocol_features
 blockchain/nodeos-data-volume/nodeos-data/data/blocks/*
