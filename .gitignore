@@ -31,14 +31,16 @@
 *.out
 *.app
 
-*.wasm
-*.abi
-
 build/*
 build/
 dist/*
 dist/
 .DS_Store
 
-*.abi
-*.wasm
+## Blockchain
+blockchain/nodeos-data-volume/nodeos-data/config/protocol_features
+blockchain/nodeos-data-volume/nodeos-data/data/blocks/*
+!blockchain/nodeos-data-volume/nodeos-data/data/blocks/_
+blockchain/nodeos-data-volume/nodeos-data/data/snapshots/*
+!blockchain/nodeos-data-volume/nodeos-data/data/snapshots/_
+blockchain/nodeos-data-volume/nodeos-data/data/state
