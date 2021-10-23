@@ -6,9 +6,6 @@
   "author": "Cute_Wisp <sweatpotato13@gmail.com>",
   "license": "MIT",
   "lint-staged": {
-    "*.{ts,tsx,js,jsx}": [
-      "yarn run eslint --fix"
-    ],
     "*.{md,json}": [
       "prettier --write"
     ]
