@@ -1,13 +1,17 @@
 #bin/sh
+
 DIR="$( pwd )"
 echo $DIR
+
+. $DIR/scripts/constant.sh
+
 CONTAINER_NAME=eosio
 PUBLIC_KEY=EOS6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV
 PRIVATE_KEY=5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3
 
 docker rm -f $CONTAINER_NAME
 
-docker run -d --name $CONTAINER_NAME -p 8888:8888 -v $DIR/blockchain/nodeos-data-volume/nodeos-data/config:/etc/nodeos -v $DIR/blockchain/nodeos-data-volume/nodeos-data/data:/data -v $DIR/blockchain/nodeos-data-volume/nodeos-data/contracts:/contracts -it eostudio/eos:v2.0.7 /usr/bin/nodeos --data-dir=/data --config-dir=/etc/nodeos --genesis-json=/etc/nodeos/genesis.json --delete-all-blocks
+docker run -d --name $CONTAINER_NAME -p 8888:8888 -v $DIR/blockchain/nodeos-data-volume/nodeos-data/config:/etc/nodeos -v $DIR/blockchain/nodeos-data-volume/nodeos-data/data:/data -v $DIR/blockchain/nodeos-data-volume/nodeos-data/contracts:/contracts -v $DIR/build:/$CONTRACT_NAME -it eostudio/eos:v2.0.7 /usr/bin/nodeos --data-dir=/data --config-dir=/etc/nodeos --genesis-json=/etc/nodeos/genesis.json --delete-all-blocks
 
 docker exec $CONTAINER_NAME keosd &
 sleep 1
@@ -29,6 +33,7 @@ sleep 1
 docker exec $CONTAINER_NAME cleos create account eosio eosio.token $PUBLIC_KEY -p eosio
 docker exec $CONTAINER_NAME cleos create account eosio eosio.msig $PUBLIC_KEY -p eosio
 docker exec $CONTAINER_NAME cleos create account eosio eosio.wrap $PUBLIC_KEY -p eosio
+docker exec $CONTAINER_NAME cleos create account eosio $CONTRACT_NAME $PUBLIC_KEY -p eosio
 
 sleep 1
 docker exec $CONTAINER_NAME cleos set contract eosio.token /contracts/eosio.token -p eosio.token
@@ -43,3 +48,5 @@ docker exec $CONTAINER_NAME cleos push action eosio.token issue '["eosio", "1000
 sleep 1
 docker exec $CONTAINER_NAME cleos set contract eosio /contracts/eosio.system -p eosio
 docker exec $CONTAINER_NAME cleos set contract eosio.wrap /contracts/eosio.wrap -p eosio.wrap
+
+docker exec $CONTAINER_NAME cleos set contract $CONTRACT_NAME /$CONTRACT_NAME -p $CONTRACT_NAME
