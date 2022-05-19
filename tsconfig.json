@@ -18,8 +18,7 @@
     "paths": {
       "@lib/*": ["src/lib/*"],
       "@interfaces/*": ["src/interfaces/*"],
-      "@did-data/*": ["did-data/*"],
-      "@ledgis-history/*": ["ledgis-history/*"]
+      "@did-data/*": ["did-data/*"]
     },
     "typeRoots": ["node_modules/@types"],
     "types": ["reflect-metadata", "jest"],
