@@ -1,5 +1,5 @@
 #bin/sh
-DIR="$( cd "$( dirname "$0" )" && pwd )"
+DIR="$( pwd )"
 echo $DIR
 rm -rf build
 mkdir build

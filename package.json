@@ -16,7 +16,7 @@
     }
   },
   "scripts": {
-    "setup": "./scripts/run.sh",
+    "setup": "./scripts/setup.sh",
     "build": "./scripts/build.sh",
     "test": "docker rm -f eosio && yarn setup && mocha -r ts-node/register tests/**/*.test.ts"
   },
