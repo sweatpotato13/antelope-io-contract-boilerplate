@@ -11,7 +11,7 @@ PRIVATE_KEY=5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3
 
 docker rm -f $CONTAINER_NAME
 
-docker run -d --name $CONTAINER_NAME -p 8888:8888 -v $DIR/blockchain/nodeos-data-volume/nodeos-data/config:/etc/nodeos -v $DIR/blockchain/nodeos-data-volume/nodeos-data/data:/data -v $DIR/blockchain/nodeos-data-volume/nodeos-data/contracts:/contracts -v $DIR/build:/$CONTRACT_NAME -it eostudio/eos:v2.0.7 /usr/bin/nodeos --data-dir=/data --config-dir=/etc/nodeos --genesis-json=/etc/nodeos/genesis.json --delete-all-blocks
+docker run -d --platform linux/amd64 --name $CONTAINER_NAME -p 8888:8888 -v $DIR/blockchain/nodeos-data-volume/nodeos-data/config:/etc/nodeos -v $DIR/blockchain/nodeos-data-volume/nodeos-data/data:/data -v $DIR/blockchain/nodeos-data-volume/nodeos-data/contracts:/contracts -v $DIR/build:/$CONTRACT_NAME -it sweatpotato/eos:2.1.0 /usr/bin/nodeos --data-dir=/data --config-dir=/etc/nodeos --genesis-json=/etc/nodeos/genesis.json --delete-all-blocks
 
 docker exec $CONTAINER_NAME keosd &
 sleep 1

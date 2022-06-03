@@ -48,3 +48,11 @@ blockchain/nodeos-data-volume/nodeos-data/data/blocks/*
 blockchain/nodeos-data-volume/nodeos-data/data/snapshots/*
 !blockchain/nodeos-data-volume/nodeos-data/data/snapshots/_
 blockchain/nodeos-data-volume/nodeos-data/data/state
+
+.yarn/*
+!.yarn/cache
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
