@@ -4,7 +4,8 @@
 
 ### How to build
 ```text
-./build.sh
+yarn
+yarn build
 ```
 
 ### How to change eosio-cdt version
