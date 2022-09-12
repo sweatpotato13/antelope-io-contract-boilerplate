@@ -16,9 +16,9 @@
     }
   },
   "scripts": {
-    "setup": "./scripts/setup.sh",
-    "build": "./scripts/build.sh",
-    "test": "yarn setup && mocha -r ts-node/register tests/**/*.test.ts"
+    "setup": "sh scripts/setup.sh",
+    "build": "sh scripts/build.sh",
+    "test": "yarn build && yarn setup && mocha -r ts-node/register tests/**/*.test.ts"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.12.13",
@@ -45,5 +45,5 @@
     "eosjs": "^22.1.0",
     "text-encoding": "^0.7.0"
   },
-  "packageManager": "yarn@3.2.1"
+  "packageManager": "yarn@3.2.3"
 }
