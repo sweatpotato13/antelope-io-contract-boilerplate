@@ -13,6 +13,6 @@ docker rm -f $CONTAINER_NAME
 
 rm -rf "$DIR"/blockchain/nodeos-data-volume/nodeos-data/data/*
 
-docker run -d --name $CONTAINER_NAME -p 8888:8888 -v "$DIR"/blockchain/nodeos-data-volume/nodeos-data/config:/etc/nodeos -v "$DIR"/build:/$CONTRACT_NAME -it sweatpotato/leap:3.1.1-snapshot nodeos --data-dir=/data --config-dir=/etc/nodeos --snapshot /snapshot.bin --disable-replay-opts
+docker run -d --name $CONTAINER_NAME -p 8888:8888 -v "$DIR"/blockchain/nodeos-data-volume/nodeos-data/config:/etc/nodeos -v "$DIR"/build:/$CONTRACT_NAME -it sweatpotato/leap:3.1.2-snapshot nodeos --data-dir=/data --config-dir=/etc/nodeos --snapshot /snapshot.bin --disable-replay-opts
 
 sleep 3
