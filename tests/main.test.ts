@@ -16,7 +16,7 @@ describe("main contract test", () => {
     describe("blockchain connection test", async () => {
         it("connect blockchain", async () => {
             const result = await rpc.get_info();
-            expect(result.server_version_string).eq("v3.1.3");
+            expect(result.server_version_string).eq("v3.2.0");
         });
     });
 });
